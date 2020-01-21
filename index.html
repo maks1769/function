@@ -28,20 +28,23 @@
 
     <script>
         function f(a=15, b=15, c) {
-
             function sum(a, b) {
                 return a + b;
             }
 
-            return c ? c() : sum(a, b);
+            if (typeof c === 'function') {
+                return c();
+            }
+
+            return sum(a, b);
         }
 
-        function f1(a, b) {
-            return a + b;
+        function f1() {
+            return 13;
         }
 
         console.log(f(6, 3));
-        console.log(f(40, 20, f1()));
+        console.log(f(40, 20, f1));
     </script><!--part2-->
 </body>
 </html>

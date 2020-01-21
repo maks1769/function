@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var symbol = prompt('Your symbol');
+
+        function createTriangle(height, symbol) {
+            var line = "";
+
+            for (i = 1; i <= height; i++) {
+                for (j = 1; j <= i; j++) {
+                    line += symbol[0];
+                }
+                line += "\n";
+            }
+            return line;
+        }
+
+        console.log(createTriangle(5, symbol));
+    </script><!--part1-->
+
+    <script>
+        function f(a, b, c) {
+
+            function sum(a, b) {
+                return a + b;
+            }
+
+            return c ? c() : sum(a, b);
+        }
+
+        function f1(a, b) {
+            return a + b;
+        }
+
+        console.log(f(6, 3));
+        console.log(f(40, 20, f1()));
+    </script><!--part2-->
+</body>
+</html>
